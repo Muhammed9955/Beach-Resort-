@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import items from "./data";
-import Client from "./Contentful";
+import React, { Component } from 'react';
+import items from './data';
+import Client from './Contentful';
 
 const RoomContext = React.createContext();
 
@@ -11,7 +11,7 @@ export default class RoomProvider extends Component {
     featuredRooms: [],
     loading: true,
     //
-    type: "all",
+    type: 'all',
     capacity: 1,
     price: 0,
     minPrice: 0,
@@ -84,7 +84,7 @@ export default class RoomProvider extends Component {
   };
   handleChange = event => {
     const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     console.log(name, value);
 
@@ -113,7 +113,7 @@ export default class RoomProvider extends Component {
     capacity = parseInt(capacity);
     price = parseInt(price);
     // filter by type
-    if (type !== "all") {
+    if (type !== 'all') {
       tempRooms = tempRooms.filter(room => room.type === type);
     }
     // filter by capacity
